@@ -9,19 +9,19 @@ location
 
 ## Table of Contents
 
-Features
-Technologies Implementation
-Installation & Setup
-Usage
+- Features
+- Technologies Implementation
+- Installation & Setup
+- Usage
 
 ## Features:
 
-1. - User entry\*: easily enter a chat room to quickly start talking to friends and family.
-2. - Messaging\*: ability to send messages to friends and family members to exchange the latest news.
-3. - Image sharing\*: ability to send images to friends and family.
-4. - Location sharing\*: ability to share location with my friends and family.
-5. - Offline capabilities\*: able to read messages offline.
-6. - Accessibility\*: Accessible, supporting screen readers for visually impaired users.
+- User entry: easily enter a chat room to quickly start talking to friends and family.
+- Messaging: ability to send messages to friends and family members to exchange the latest news.
+- Image sharing: ability to send images to friends and family.
+- Location sharing: ability to share location with my friends and family.
+- Offline capabilities: able to read messages offline.
+- Accessibility: Accessible, supporting screen readers for visually impaired users.
 
 ---
 
