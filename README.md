@@ -43,10 +43,13 @@ location
 
 - Dependencies
 
-npm install @react-navigation/native
-npm install @react-navigation/native-stack
-npm install expo
-npm install react-native
+# npm install @react-navigation/native
+
+# npm install @react-navigation/native-stack
+
+# npm install expo
+
+# npm install react-native
 
 1. **Navigate to the Directory**:
 
