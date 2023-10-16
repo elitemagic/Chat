@@ -6,7 +6,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import { GiftedChat } from "react-native-gifted-chat";
+import { GiftedChat, Bubble } from "react-native-gifted-chat";
 
 const Chat = ({ route, navigation }) => {
   const { name, background } = route.params;
@@ -14,9 +14,9 @@ const Chat = ({ route, navigation }) => {
   /* initailze state */
   const [messages, setMessages] = useState([]);
 
-  // useEffect(() => {
-  //   navigation.setOptions({ title: name });
-  // }, []);
+  useEffect(() => {
+    navigation.setOptions({ title: name });
+  }, []);
 
   /* Function called right after the Chat component mounts - use setter method to see each element of the UI displayed on the screen right away*/
   useEffect(() => {
@@ -31,6 +31,12 @@ const Chat = ({ route, navigation }) => {
           avatar: "https://placeimg.com/140/140/any",
         },
       },
+      {
+        _id: 2,
+        text: "This is a system message",
+        createdAt: new Date(),
+        system: true,
+      },
     ]);
   }, []);
 
@@ -40,10 +46,27 @@ const Chat = ({ route, navigation }) => {
     );
   };
 
+  const renderBubble = (props) => {
+    return (
+      <Bubble
+        {...props}
+        wrapperStyle={{
+          right: {
+            backgroundColor: "#FFF",
+          },
+          left: {
+            backgroundColor: "#000",
+          },
+        }}
+      />
+    );
+  };
+
   return (
     <View style={[styles.container, { backgroundColor: background }]}>
       <GiftedChat
         messages={messages}
+        renderBubble={renderBubble}
         onSend={(messages) => onSend(messages)}
         user={{
           _id: 1,

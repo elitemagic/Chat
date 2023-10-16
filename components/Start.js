@@ -115,9 +115,10 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   welcome_text: {
-    fontSize: 30,
+    fontSize: 50,
     fontWeight: "bold",
     textAlign: "center",
+    fontStyle: "italic",
   },
   bottomContainer: {
     width: "88%",
