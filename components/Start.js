@@ -46,19 +46,37 @@ const Start = ({ navigation }) => {
 
           <Text>Set your favorite background image</Text>
           <View style={styles.backgroundStartSelect}>
-            <TouchableOpacity onPress={() => setBackgroundStart("background1")}>
+            <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Options for background selection, this is the first"
+              accessibilityRole="button"
+              accessibilityHint="Let's you choose a background for your start screen"
+              onPress={() => setBackgroundStart("background1")}
+            >
               <Image
                 source={require("../assets/background1.png")}
                 style={styles.backgroundStart_icons}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => setBackgroundStart("background2")}>
+            <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Options for background selection, this is the second"
+              accessibilityRole="button"
+              accessibilityHint="Let's you choose a background for your start screen"
+              onPress={() => setBackgroundStart("background2")}
+            >
               <Image
                 source={require("../assets/background2.png")}
                 style={styles.backgroundStart_icons}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => setBackgroundStart("background3")}>
+            <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Options for background selection, this is the third and final option"
+              accessibilityRole="button"
+              accessibilityHint="Let's you choose a background for your start screen"
+              onPress={() => setBackgroundStart("background3")}
+            >
               <Image
                 source={require("../assets/background3.png")}
                 style={styles.backgroundStart_icons}
@@ -71,6 +89,10 @@ const Start = ({ navigation }) => {
             {["#87CEEB", "#E6E6FA", "#90EE90", "#F08080"].map(
               (color, index) => (
                 <TouchableOpacity
+                  accessible={true}
+                  accessibilityLabel="Choose one of four options for colour of the background on the next screen, the chat section"
+                  accessibilityRole="button"
+                  accessibilityHint="Let's you choose a background for your chat screen"
                   key={index}
                   style={[
                     styles.backgroundChat_icons,
@@ -115,7 +137,7 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   welcome_text: {
-    fontSize: 50,
+    fontSize: 40,
     fontWeight: "bold",
     textAlign: "center",
     fontStyle: "italic",

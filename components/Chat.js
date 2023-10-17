@@ -14,37 +14,38 @@ const Chat = ({ route, navigation }) => {
   /* initailze state */
   const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    navigation.setOptions({ title: name });
-  }, []);
-
-  /* Function called right after the Chat component mounts - use setter method to see each element of the UI displayed on the screen right away*/
-  useEffect(() => {
-    setMessages([
-      {
-        _id: 1,
-        text: "Hello developer",
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: "React Native",
-          avatar: "https://placeimg.com/140/140/any",
-        },
-      },
-      {
-        _id: 2,
-        text: "This is a system message",
-        createdAt: new Date(),
-        system: true,
-      },
-    ]);
-  }, []);
-
   const onSend = (newMessages) => {
     setMessages((previousMessages) =>
       GiftedChat.append(previousMessages, newMessages)
     );
   };
+
+  /* Function called right after the Chat component mounts - uses setter method to see each element of the UI displayed on the screen right away*/
+  useEffect(() => {
+    /* Set the title of the screen as the users name */
+    navigation.setOptions({ title: name });
+
+    setMessages([
+      {
+        /* Displays a chat message */
+        _id: 2,
+        text: "Hello, what did you want to talk about?",
+        createdAt: new Date(),
+        user: {
+          _id: 3,
+          name: "React Native",
+          avatar: "https://placeimg.com/140/140/any",
+        },
+      },
+      {
+        /* Displays a system message */
+        _id: 1,
+        text: "Welcome to the chat",
+        createdAt: new Date(),
+        system: true,
+      },
+    ]);
+  }, []);
 
   const renderBubble = (props) => {
     return (
@@ -75,7 +76,6 @@ const Chat = ({ route, navigation }) => {
       {Platform.OS === "ios" ? (
         <KeyboardAvoidingView behavior="padding" />
       ) : null}
-
       {Platform.OS === "android" ? (
         <KeyboardAvoidingView behavior="height" />
       ) : null}
